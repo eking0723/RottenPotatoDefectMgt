@@ -1,0 +1,49 @@
+RP 0003 1stPass [discover and navigation]: Result card summary overlay fails to pop up when triggered.
+Tester: Marylle Laguna
+
+[Summary]
+When interacting with a search result card, the summary overlay completely fails to appear/pop up. The user is unable to preview the item’s summary details directly from the search reults page.
+
+[Precondition]
+  - User is logged into Rotten Potato
+  -	The user has performed a search that yields valid result cards.
+
+ Software version: RP.010.004
+ Software configuration: Internal QA Environment
+ Hardware specification: Windows 11 Desktop
+ Network configuration: Wi-Fi
+
+[Steps to reproduce]
+  1. Navigate to the main search of Rotten potato
+  2. Input any search query and hit enter to load the search results.
+  3. Perform the trigger action on a returned search result card
+
+[Actual results]
+  1. No pop-up or overlay appears; the search page remains static with no visual changes or feedback. 
+
+[Expected results]
+  1. A clean, readable summary overlay/pop-up should immediately display above or beside the result card containing the item's brief details.
+
+[Additional information]
+ A screenshot showing the successful redirection with the flawed credentials
+
+[Is this Breakage?]
+  No, missed from previous pass
+ 
+[Previous code tested]
+  N/A
+ 
+[Severity: How does this problem impact the customer/user?]
+  Cosmetic issue/ user is inconvenienced (2)
+ 
+[Likelihood: How often will a customer/user use this feature/function?]
+  High (8)
+
+[Repeatability: Is this problem easily reproducible?]
+  100% Reproducible (10)
+
+[Impacted Test Cases]
+  RP-SRCH-0003 (Result Card Summary Overlay)
+
+[Impact Sizing (in days)]
+  Less than a day
