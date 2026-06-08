@@ -1,0 +1,48 @@
+RP 0003 1stPass [discover and navigation]: Result card summary overlay fails to pop up when triggered.
+Tester: Marylle Laguna
+
+[Summary]
+When a user clicks on a search result card, the application fails to execute the target node routing. The application remains entirely static, and no navigation or action occurs upon the click event.
+
+[Precondition]
+  - User has executed a search query.
+  - Search results are populated and visible on the page.
+ Software version: RP.010.004
+ Software configuration: Internal QA Environment
+ Hardware specification: Windows 11 Desktop
+ Network configuration: Wi-Fi
+
+[Steps to reproduce]
+  1. Navigate to the main search of Rotten potato 
+  2. Input any search query and hit enter to load the search results.
+  3. Click directly on one of the populated search result cards.
+
+[Actual results]
+  1. Nothing happens. The UI remains completely static, there is no redirection to the target node, and no visual feedback/error is presented
+
+[Expected results]
+  1. The user should be immediately routed and redirected to the specific details page/target node corresponding to the clicked search card.
+
+[Additional information]
+ A screenshot showing the successful redirection with the flawed credentials
+
+[Is this Breakage?]
+  No, missed from previous pass
+ 
+[Previous code tested]
+  N/A
+ 
+[Severity: How does this problem impact the customer/user?]
+  Data loss / Required function is missing (8) 
+ 
+[Likelihood: How often will a customer/user use this feature/function?]
+  Very High (10)
+
+[Repeatability: Is this problem easily reproducible?]
+  100% Reproducible (10)
+
+[Impacted Test Cases]
+  RP-SRCH-0004 (Target Search Node Routing Validation)
+
+[Impact Sizing (in days)]
+  Can block further testing
