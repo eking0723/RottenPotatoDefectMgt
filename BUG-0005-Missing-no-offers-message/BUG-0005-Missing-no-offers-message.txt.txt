@@ -1,0 +1,49 @@
+RP 0002 1stPass [Commission Request]: Open Request succeeds but fails to display the "No offers received yet" message display.
+Tester: Marylle Laguna
+
+[Summary]
+When an Open Request has successfully been created and currently has zero offers, the user interface fails to display the expected empty state message ("No offers received yet") in the offers section.
+
+[Precondition]
+ - User must be logged in as a client
+ - The user must post to request a commission to the artist and currently has 0 offers submitted to it
+Software version: RP.010.005
+Software configuration: Default user configuration
+Hardware specification: Windows 11 Desktop
+Network configuration: Wi-Fi
+
+[Steps to reproduce]
+ 1.	Navigate to the Commission page.
+ 2.	Fill out all required fields for a new Open request
+ 3.	Click the” Submit” or “Post” button
+ 4.	Observe the success message/confirmation
+
+[Actual results]
+  1. The offers section is entirely blank or missing the proper empty state indicator. 
+
+[Expected results]
+  1. The UI should explicitly display the text "No offers received yet" (or the designated empty state graphic/text) to confirm to the user that the section has loaded but is currently empty. 
+
+[Additional information]
+  See attached screenshots showing the successful redirection with the flawed credentials 
+
+[Is this Breakage?]
+  No, missed from previous pass
+ 
+[Previous code tested]
+  N/A
+ 
+[Severity: How does this problem impact the customer/user?]
+  Cosmetic issue/User is inconvenienced (2)  
+ 
+[Likelihood: How often will a customer/user use this feature/function?]
+  High (8)
+
+[Repeatability: Is this problem easily reproducible?]
+  100% Reproducible (10)
+
+[Impacted Test Cases]
+  RP-COMM-0002 (Commissioner Posts Open Request
+
+[Impact Sizing (in days)]
+  Less than a day
