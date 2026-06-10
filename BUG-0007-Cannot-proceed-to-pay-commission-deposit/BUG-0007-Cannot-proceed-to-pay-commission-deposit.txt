@@ -1,0 +1,51 @@
+RP 0010 [Commission Deposit]: Cannot proceed to pay commission deposit, blocking downstream final payment steps
+Tester: [Name]
+
+[Summary]
+During the commission payment flow, users are completely unable to proceed with paying the required deposit. Clicking the deposit payment button fails to initiate the payment gateway or commit the transaction. Because the deposit cannot be cleared, the commission is stuck and completely blocking the testing of subsequent final payment stages.
+
+[Precondition]
+ - A commission request has been accepted by an artist.
+ - The system has generated a deposit invoice/payment prompt for the commissioner.
+Software version: RP.010.005
+Software configuration: Default payment gateway
+Hardware specification: Windows 11 Desktop
+Network configuration: Wi-Fi
+
+[Steps to reproduce]
+ 1.	Log in as a client and navigate to an active commission that requires a deposit payment.
+ 2.	Click on the "Pay Deposit" button to initiate the transaction commit.
+ 3.	Observe the payment flow behavior and UI response.
+
+[Actual results]
+  1. The system does not advance to the payment gateway interface; the action fails to commit, leaving the deposit unpaid and freezing the commission status.
+
+[Expected results]
+  1. Clicking the button should successfully commit the deposit payment flow, redirecting the user to the payment processing form or completing the sandbox transaction, which should then advance the commission status.
+
+[Additional information]
+  See attached screenshots showing the successful redirection with the flawed credentials.
+  Critical Note: This bug prevents progression to subsequent testing workflows
+  
+[Is this Breakage?]
+  No, missed from previous pass
+ 
+[Previous code tested]
+  N/A
+ 
+[Severity: How does this problem impact the customer/user?]
+  Data loss / Required function is missing (8) Required function is missing (8) v 
+ 
+[Likelihood: How often will a customer/user use this feature/function?]
+  Very High (10)
+
+[Repeatability: Is this problem easily reproducible?]
+  [e.g., 100% Reproducible (10)]
+
+[Impacted Test Cases]
+ - RP-PAY-0010 | Commission Deposit Paid Commit (Primary)
+ - RP-PAY-0011 | Artist Marks Commission Ready for Final Payment (Blocked) 
+ - RP-PAY-0012 | Commission Final Payment Commit (Blocked)
+
+[Impact Sizing (in days)]
+  Can block further testing
