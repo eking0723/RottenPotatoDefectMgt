@@ -1,0 +1,50 @@
+RRP 0004 1stPass [Profile Management]: Long username is not truncated on the Profile Display
+Tester: Marylle Laguna
+
+[Summary]
+When viewing the Profile Display, a user account with an exceptionally long username fails to truncate gracefully. The text overflows its designated container, causing visual overlap with adjacent UI elements.
+
+[Precondition]
+ - User must be logged into the application
+ - The user's account must have a username exceeding standard character limits (e.g., 40+ characters).
+Software version: RP.010.005
+Software configuration: Default user configuration
+Hardware specification: Windows 11 Desktop
+Network configuration: Wi-Fi
+ 
+[Steps to reproduce]
+ 1.	Log into the application with an account.
+ 2.	Navigate to the profile settings and update the username to a very long string (e.g., "AlexandrianaAnastasiaTheThirdOfHerName").
+ 3.	Save the changes and navigate to the main "Profile Display" screen.
+ 4.	Observe the username text container.
+
+
+[Actual results]
+  1. The long username text is not truncated and bleeds outside of its bounding box, overlapping with other profile UI elements.
+
+[Expected results]
+  1. The long username should be cleanly truncated with an ellipsis (e.g., "AlexandrianaAnas...") to maintain the integrity of the UI layout.
+
+[Additional information]
+  See attached screenshots showing the successful redirection with the flawed credentials 
+
+[Is this Breakage?]
+  No, missed from previous pass
+ 
+[Previous code tested]
+  N/A
+ 
+[Severity: How does this problem impact the customer/user?]
+  Cosmetic issue/User is inconvenienced (2)  
+ 
+[Likelihood: How often will a customer/user use this feature/function?]
+  Low, only special types of users (2)
+
+[Repeatability: Is this problem easily reproducible?]
+  100% Reproducible (10)
+
+[Impacted Test Cases]
+  RP-SRCH-0002 (Profile Display (Edge Case))
+
+[Impact Sizing (in days)]
+  Less than a day
