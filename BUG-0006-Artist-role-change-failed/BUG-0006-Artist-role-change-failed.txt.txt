@@ -1,0 +1,49 @@
+RP 0003 1stPass [Artist Test Account Setup]: Choosing "I want to sell art" completes successfully but fails to change account role to Artist.
+Tester: Marylle Laguna
+
+[Summary]
+During the Artist Test Account Setup flow, selecting the "I want to sell art" option results in a successful setup completion screen, but the system fails to actually update the user's account role. The account remains a standard user/buyer account instead of transitioning to an Artist account.
+
+[Precondition]
+ - User is navigating the registration or initial test account setup onboarding flow
+Software version: RP.010.005
+Software configuration: Default user configuration
+Hardware specification: Windows 11 Desktop
+Network configuration: Wi-Fi
+
+[Steps to reproduce]
+ 1.	Navigate to Sign Up platform
+ 2.	Fill out the required fields
+ 3.	Select the option “I want to sell art”
+ 4.	Complete the remaining setups and submit
+ 5.	Navigate to profile dashboard
+
+[Actual results]
+  1. The setup finishes with a success message, but the account type is not modified; the user is still restricted to a standard account role and cannot access artist tools and has to become an artist. 
+
+[Expected results]
+  1. Upon selecting "I want to sell art" and completing the setup, the account role should successfully transition to "Artist," granting the user access to artist-specific dashboards and features.
+
+[Additional information]
+  See attached screenshots showing the successful redirection with the flawed credentials 
+
+[Is this Breakage?]
+  No, missed from previous pass
+ 
+[Previous code tested]
+  N/A
+ 
+[Severity: How does this problem impact the customer/user?]
+  Data loss / Required function is missing (8)  
+ 
+[Likelihood: How often will a customer/user use this feature/function?]
+  High (8)
+
+[Repeatability: Is this problem easily reproducible?]
+  100% Reproducible (10)
+
+[Impacted Test Cases]
+  RP-COMM-0003 (Artist Test Account Setup)
+
+[Impact Sizing (in days)]
+  Can block further testing
